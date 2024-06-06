@@ -31,6 +31,10 @@ public class DealDamage : MonoBehaviour
             {
                 dealDamageEvent(damage);
             }          
+        } else if (collision.gameObject.tag == "StopPoint")
+        {
+            Destroy(this.gameObject);
         }
     }
+
 }
