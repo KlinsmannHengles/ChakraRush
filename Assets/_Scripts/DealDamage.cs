@@ -30,6 +30,9 @@ public class DealDamage : MonoBehaviour
             if (dealDamageEvent != null)
             {
                 dealDamageEvent(damage);
+
+                // Depois substituir por animação
+                Destroy(this.gameObject);
             }          
         } else if (collision.gameObject.tag == "StopPoint")
         {
