@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 447974299}
   - component: {fileID: 447974298}
   - component: {fileID: 447974303}
+  - component: {fileID: 447974305}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -727,6 +728,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.2457285, y: -0.2948761}
   m_Size: {x: 11.970072, y: 16.982903}
   m_Direction: 0
+--- !u!95 &447974305
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447974297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5476190074a21e84983c1fd4bab0771c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &511492487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1156,7 @@ MonoBehaviour:
   firstObstacle: {fileID: 952770953274817313, guid: 7c58d6ffdd4ace74fb37a208c342e62b, type: 3}
   spawnPoint: {fileID: 758801968}
   firstObstacleSpeed: 2400
-  spawnRate: 0.6
+  spawnRate: 0.3
   timer: 0
 --- !u!4 &1230882875
 Transform:
