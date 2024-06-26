@@ -8,6 +8,7 @@ public class PlayerHealthUI : MonoBehaviour
     public PlayerHealth playerHealth;
 
     public int initialHearts;
+    public int actualHearts;
     public GameObject[] hearts;
     public GameObject[] slots;
 
@@ -15,6 +16,9 @@ public class PlayerHealthUI : MonoBehaviour
     void Start()
     {
         PlayerHealth.onLoseHealthEvent += LoseHeart;
+        HeartPowerUp_Behaviour.addHeartEvent += AddHeartSlot;
+
+        actualHearts = initialHearts;
     }
 
     // Update is called once per frame
@@ -30,5 +34,36 @@ public class PlayerHealthUI : MonoBehaviour
             hearts[playerHealth.health].SetActive(false);
         }
         
+    }
+
+    public void AddHeart()
+    {
+        foreach (var heart in hearts)
+        {
+            if (heart.activeInHierarchy == true && playerHealth.health <= 5)
+            {
+                playerHealth.health++;
+                heart.SetActive(true);
+                return;
+            }
+        }
+    }
+
+    public void AddHeartSlot()
+    {
+        if (slots[3].activeInHierarchy == false)
+        {
+            actualHearts++;
+            slots[3].SetActive(true);
+            AddHeart();
+        } else if (slots[4].activeInHierarchy == false)
+        {
+            actualHearts++;
+            slots[4].SetActive(true);
+            AddHeart();
+        } else
+        {
+            Debug.Log("You have enough hearts: The max is 5!!!");
+        }
     }
 }
