@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerHealthUI : MonoBehaviour
 {
@@ -40,10 +41,11 @@ public class PlayerHealthUI : MonoBehaviour
     {
         foreach (var heart in hearts)
         {
-            if (heart.activeInHierarchy == true && playerHealth.health <= 5)
+            if (heart.activeInHierarchy == false && playerHealth.health <= 5)
             {
                 playerHealth.health++;
                 heart.SetActive(true);
+                heart.GetComponentInParent<Transform>().DOShakeScale(2f, 0.2f, 2);
                 return;
             }
         }
@@ -55,15 +57,18 @@ public class PlayerHealthUI : MonoBehaviour
         {
             actualHearts++;
             slots[3].SetActive(true);
+            slots[3].transform.DOShakeScale(2f, 0.2f, 2);
             AddHeart();
         } else if (slots[4].activeInHierarchy == false)
         {
             actualHearts++;
             slots[4].SetActive(true);
+            slots[4].transform.DOShakeScale(2f, 0.2f, 2);
             AddHeart();
         } else
         {
-            Debug.Log("You have enough hearts: The max is 5!!!");
+            AddHeart();
+            //Debug.Log("You have enough hearts: The max is 5!!!");
         }
     }
 }

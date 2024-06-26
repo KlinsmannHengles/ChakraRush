@@ -28,10 +28,18 @@ public class ObstacleManager : MonoBehaviour
     private bool canActive = true;
     [SerializeField] public Vector3[] path;
 
+    [Header("HeartAppearingManager")]
+    [SerializeField] private bool isActiveHeart;
+    private bool canActiveHeartPowerUp = true;
+    [SerializeField] private GameObject heartPowerUp;
+    [SerializeField] private float heartSpeed;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ScoreManager.activeObstacleEvent += ActiveObstacles;
+        ScoreManager.spawnHeartEvent += SpawnHeartUpgrade;
     }
 
     // Update is called once per frame
@@ -72,6 +80,23 @@ public class ObstacleManager : MonoBehaviour
         
     }
 
+    private void ActiveObstacles(int obstacle)
+    {
+        if (obstacle == 1)
+        {
+            isActive = true;
+        } else if (obstacle == 2)
+        {
+            isActive2 = true;
+        } else if (obstacle == 3)
+        {
+            isActive3 = true;
+        } else
+        {
+            Debug.Log("Não tem obstaculo pra ativar");
+        }
+    }
+
     private void FirstObstacleSpawn()
     {
         GameObject obstacle = Instantiate(firstObstacle, spawnPoint.transform);
@@ -107,5 +132,17 @@ public class ObstacleManager : MonoBehaviour
     {
         isActive3 = false;
         canActive = true;
+    }
+
+    private void SpawnHeartUpgrade()
+    {
+        if (canActiveHeartPowerUp)
+        {
+            GameObject heart = Instantiate(heartPowerUp, spawnPoint.transform);
+            spawnPoint.transform.DetachChildren();
+            heart.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, heartSpeed, 0f));
+
+            canActiveHeartPowerUp = false;
+        }
     }
 }
