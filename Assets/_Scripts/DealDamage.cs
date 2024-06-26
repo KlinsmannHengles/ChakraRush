@@ -25,6 +25,11 @@ public class DealDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Player")
         {
             if (dealDamageEvent != null)
@@ -33,8 +38,9 @@ public class DealDamage : MonoBehaviour
 
                 // Depois substituir por animação
                 Destroy(this.gameObject);
-            }          
-        } else if (collision.gameObject.tag == "StopPoint")
+            }
+        }
+        else if (collision.gameObject.tag == "StopPoint")
         {
             Destroy(this.gameObject);
         }
