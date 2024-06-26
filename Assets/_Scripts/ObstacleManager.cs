@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using DG.Tweening;
 
 public class ObstacleManager : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class ObstacleManager : MonoBehaviour
 
     [Header("Third Obstacle")]
     [SerializeField] private bool isActive3;
-    [SerializeField] private GameObject secondObstacle3;
+    [SerializeField] private GameObject thirdObstacle;
+    private bool canActive = true;
+    [SerializeField] public Vector3[] path;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,12 @@ public class ObstacleManager : MonoBehaviour
                 timer2 = 0f;
             }
         }
+
+        if (isActive3 && canActive)
+        {
+            ThirdObstacleBehaviour1();
+            canActive = false;
+        }
         
     }
 
@@ -79,8 +88,24 @@ public class ObstacleManager : MonoBehaviour
         obstacle.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, firstObstacleSpeed, 0f));
     }
 
-    private void ThirdObstacleBehaviour()
+    private void ThirdObstacleBehaviour1()
     {
+        thirdObstacle.transform.DOScale(new Vector3(0.5f, 0.5f, 1f), 7f).onComplete = ThirdObstacleBehaviour2;
+    }
 
+    private void ThirdObstacleBehaviour2()
+    {
+        thirdObstacle.transform.DOPath(path, 40f).SetEase(Ease.Linear).onComplete = ThirdObstacleBehaviour3;
+    }
+
+    private void ThirdObstacleBehaviour3()
+    {
+        thirdObstacle.transform.DOScale(new Vector3(1f, 1f, 1f), 10f).onComplete = EnableThirdObstacleAgain;
+    }
+
+    private void EnableThirdObstacleAgain()
+    {
+        isActive3 = false;
+        canActive = true;
     }
 }
