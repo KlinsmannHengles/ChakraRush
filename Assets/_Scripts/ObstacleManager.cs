@@ -103,7 +103,7 @@ public class ObstacleManager : MonoBehaviour
         spawnPoint.transform.DetachChildren();
         obstacle.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, firstObstacleSpeed, 0f));
 
-        spawnPoint.transform.position = new Vector3(Random.Range(-120f, 120f), -140f, 0f);
+        spawnPoint.transform.position = new Vector3(Random.Range(-100f, 100f), -140f, 0f);
     }
 
     private void SecondObstacleSpawn()
