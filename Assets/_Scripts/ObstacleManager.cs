@@ -28,6 +28,14 @@ public class ObstacleManager : MonoBehaviour
     private bool canActive = true;
     [SerializeField] public Vector3[] path;
 
+    [Header("Fourth Obstacle")]
+    [SerializeField] private bool isActive4;
+    [SerializeField] private GameObject fourthObstacle;
+    [SerializeField] private GameObject spawnPoint3;
+    [SerializeField] private float fourthObstacleSpeed;
+    [SerializeField] private float spawnRate4;
+    [SerializeField] private float timer4 = 0f;
+
     [Header("HeartAppearingManager")]
     [SerializeField] private bool isActiveHeart;
     private bool canActiveHeartPowerUp = true;
@@ -61,6 +69,17 @@ public class ObstacleManager : MonoBehaviour
             }
         }
 
+        if (isActive4)
+        {
+            timer4 += Time.deltaTime;
+
+            if (timer4 > spawnRate4)
+            {
+                FourthObstacleSpawn();
+                timer4 = 0f;
+            }
+        }
+
         if (isActive2)
         {
             timer2 += Time.deltaTime;
@@ -91,6 +110,9 @@ public class ObstacleManager : MonoBehaviour
         } else if (obstacle == 3)
         {
             isActive3 = true;
+        } else if (obstacle == 4)
+        {
+            isActive4 = true;
         } else
         {
             Debug.Log("Não tem obstaculo pra ativar");
@@ -104,6 +126,15 @@ public class ObstacleManager : MonoBehaviour
         obstacle.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, firstObstacleSpeed, 0f));
 
         spawnPoint.transform.position = new Vector3(Random.Range(-100f, 100f), -140f, 0f);
+    }
+
+    private void FourthObstacleSpawn()
+    {
+        GameObject obstacle = Instantiate(fourthObstacle, spawnPoint3.transform);
+        spawnPoint3.transform.DetachChildren();
+        obstacle.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, fourthObstacleSpeed, 0f));
+
+        spawnPoint3.transform.position = new Vector3(Random.Range(-90f, 90f), -140f, 0f);
     }
 
     private void SecondObstacleSpawn()

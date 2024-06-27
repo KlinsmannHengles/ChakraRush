@@ -1323,6 +1323,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631738728}
   m_CullTransparentMesh: 1
+--- !u!1 &693740928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693740929}
+  m_Layer: 0
+  m_Name: SpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693740929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693740928}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -140, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758801968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,7 +2165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  firstObstacle: {fileID: 952770953274817313, guid: 7c58d6ffdd4ace74fb37a208c342e62b, type: 3}
+  firstObstacle: {fileID: 4749109740255645884, guid: 2cd2271bb7ba33148a4df705223f17eb, type: 3}
   spawnPoint: {fileID: 758801968}
   firstObstacleSpeed: 9000
   spawnRate: 0.3
@@ -2154,6 +2185,12 @@ MonoBehaviour:
   - {x: 7, y: -65, z: 0}
   - {x: 80, y: -27, z: 0}
   - {x: 0, y: 0, z: 0}
+  isActive4: 0
+  fourthObstacle: {fileID: 952770953274817313, guid: 7c58d6ffdd4ace74fb37a208c342e62b, type: 3}
+  spawnPoint3: {fileID: 693740928}
+  fourthObstacleSpeed: 7000
+  spawnRate4: 0.5
+  timer4: 0
   isActiveHeart: 0
   heartPowerUp: {fileID: 6843673632966321169, guid: 6f2b02bfefae4614a9379cb6df495811, type: 3}
   heartSpeed: 4000
@@ -3401,6 +3438,7 @@ SceneRoots:
   - {fileID: 304381400}
   - {fileID: 758801969}
   - {fileID: 1073503875}
+  - {fileID: 693740929}
   - {fileID: 1663579578}
   - {fileID: 1148577136}
   - {fileID: 1424981753}

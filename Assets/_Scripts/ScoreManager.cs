@@ -39,6 +39,7 @@ public class ScoreManager : MonoBehaviour
         if (score > 30 && score < 50)
         {
             activeObstacleEvent(1);
+            activeObstacleEvent(4);
         } else if (score > 200 && score < 220)
         {
             spawnHeartEvent();
