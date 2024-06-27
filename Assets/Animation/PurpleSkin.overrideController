@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PurpleSkin
+  m_Controller: {fileID: 9100000, guid: 5476190074a21e84983c1fd4bab0771c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6d88861426c741c4186ee79481659b44, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1aa55d2ba9995284a96a4a1a1fc7ce71, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 37ab93af43fa77b44b22e5e4a6fe619d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6628aec06cee31c4fa859f4e8258f64b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 24fa91fe43a20b2469b9d82287568394, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a0ba665e3fd94f84aacb9f70ee817697, type: 2}

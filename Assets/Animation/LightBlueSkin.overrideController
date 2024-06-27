@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LightBlueSkin
+  m_Controller: {fileID: 9100000, guid: 5476190074a21e84983c1fd4bab0771c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6d88861426c741c4186ee79481659b44, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d0ffc0e0f3f80743be000c18daa219e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 37ab93af43fa77b44b22e5e4a6fe619d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d84892ad15a6b748b00fef7e2a8c415, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 24fa91fe43a20b2469b9d82287568394, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dacedd2e4ebb1ca4eb4b6e24f1442e8b, type: 2}

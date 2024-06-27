@@ -7,6 +7,7 @@ public class DealDamage : MonoBehaviour
 {
     [Header("Attributes")]
     public int damage;
+    public ActualChakra actualChakra;
 
     public delegate void dealDamageDelegate(int damage);
     public static event dealDamageDelegate dealDamageEvent;
@@ -34,7 +35,10 @@ public class DealDamage : MonoBehaviour
         {
             if (dealDamageEvent != null)
             {
-                dealDamageEvent(damage);
+                if (actualChakra != collision.GetComponent<PlayerMovement>().actualChakra)
+                {
+                    dealDamageEvent(damage);
+                }                
 
                 // Depois substituir por animação
                 Destroy(this.gameObject);

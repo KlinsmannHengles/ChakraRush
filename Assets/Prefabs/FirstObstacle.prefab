@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  actualChakra: 1
 --- !u!95 &4775308228700735310
 Animator:
   serializedVersion: 5
