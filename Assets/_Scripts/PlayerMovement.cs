@@ -28,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
         ChakraPowerUp.addChakraEvent += ChangeChakraSkinOnTake;
     }
 
+    private void OnDisable()
+    {
+        ChakraPowerUp.addChakraEvent -= ChangeChakraSkinOnTake;
+    }
+
     // Update is called once per frame
     void Update()
     {

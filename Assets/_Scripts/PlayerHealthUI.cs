@@ -22,6 +22,12 @@ public class PlayerHealthUI : MonoBehaviour
         actualHearts = initialHearts;
     }
 
+    private void OnDisable()
+    {
+        PlayerHealth.onLoseHealthEvent -= LoseHeart;
+        HeartPowerUp_Behaviour.addHeartEvent -= AddHeartSlot;
+    }
+
     // Update is called once per frame
     void Update()
     {

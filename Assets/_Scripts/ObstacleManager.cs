@@ -50,6 +50,12 @@ public class ObstacleManager : MonoBehaviour
         ScoreManager.spawnHeartEvent += SpawnHeartUpgrade;
     }
 
+    private void OnDisable()
+    {
+        ScoreManager.activeObstacleEvent -= ActiveObstacles;
+        ScoreManager.spawnHeartEvent -= SpawnHeartUpgrade;
+    }
+
     // Update is called once per frame
     void Update()
     {
