@@ -105,21 +105,13 @@ public class ScoreManager : MonoBehaviour
         {
             spawnHeartEvent();
         }
-        else if (score > 1500 && score < 1510)
-        {
-            activeObstacleEvent(3);
-        }
-        else if (score > 1600 && score < 1610)
-        {
-            spawnHeartEvent();
-        }
         else if (score > 1700 && score < 1710)
         {
-            spawnHeartEvent();
+            activeObstacleEvent(3);
         }
         else if (score > 1800 && score < 1810)
         {
-            activeObstacleEvent(3);
+            spawnHeartEvent();
         }
         else if (score > 1900 && score < 1910)
         {
@@ -127,7 +119,15 @@ public class ScoreManager : MonoBehaviour
         }
         else if (score > 2000 && score < 2010)
         {
-            spawnHeartEvent();
+            activeObstacleEvent(3);
+        }
+        else if (score > 2400 && score < 2410)
+        {
+            activeObstacleEvent(3);
+        }
+        else if (score > 2800 && score < 2810)
+        {
+            activeObstacleEvent(3);
         }
     }
 }
